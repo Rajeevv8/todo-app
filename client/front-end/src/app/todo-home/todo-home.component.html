@@ -1,0 +1,29 @@
+<div class="d-flex justify-content-center">
+    <h2>
+        TODO LIST
+    </h2>
+</div>
+
+<div class="col-md-6 offset-md-3">
+    
+    <form #todoForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label><b> TITLE  </b></label>
+            <input type="text" class="form-control" id="title" [(ngModel)]="todo.title" name="title">
+        </div>
+        <div class="form-group">
+            <label> <b>COMPLETION DATE </b> </label>
+            <input type="text" class="form-control" id="completionDate" [(ngModel)]="todo.completionDate" name="completionDate">
+        </div>
+        <div class="form-group">
+            <label> <b> COMPLETION STATUS </b></label> <br>
+            <input name="completionStatus" ng-control="options" type="radio" [value]=true  [(ngModel)]="todo.completionStatus" >Done<br/>
+            <input name="completionStatus" ng-control="options" type="radio" [value]=false [(ngModel)]="todo.completionStatus" >Not done<br/>
+        </div>
+    <button type="submit">
+        SAVE
+    </button>
+    </form>
+</div>
+
+
